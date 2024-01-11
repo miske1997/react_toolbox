@@ -1,0 +1,21 @@
+.circle-select-container{
+    width: 120px;
+    height: 120px;
+    background-color: gray;
+    border-radius: 50%;
+    border: solid 2px;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: width 1s, height 1s;
+}
+
+.circle-option-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
