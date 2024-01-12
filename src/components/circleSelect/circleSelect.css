@@ -1,21 +1,28 @@
 .circle-select-container{
-    width: 120px;
-    height: 120px;
-    background-color: gray;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     border: solid 2px;
     text-align: center;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
-    transition: width 1s, height 1s;
+    transform-origin: 50% 50%;
+    transition: width 1s, height 1s, transform 1s;
+    position: relative;
 }
 
 .circle-option-container{
-    display: flex;
+    border: solid 1px;
+    border-radius: 50%;
+    transition: opacity 1s;
+    padding: 0.5em;
+    transform: translate(-50%, -50%);
+    background-color: white;
     justify-content: center;
     align-items: center;
-
+    position: absolute;
+    opacity: 0;
+    display: flex;
+    aspect-ratio: 1;
 }

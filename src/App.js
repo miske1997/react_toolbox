@@ -4,7 +4,10 @@ import CircleSelect from './components/circleSelect/circleSelect';
 function App() {
   return (
     <div className="App">
-      <CircleSelect></CircleSelect>
+      <div className='con'>
+        <CircleSelect options={[{text: "OPREM"}, {text: "SUNEM"}, {text: "MUNEM"}, {text: "CUKAM"}]}></CircleSelect>
+
+      </div>
     </div>
   );
 }
