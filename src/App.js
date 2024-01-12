@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <div className='con'>
-        <CircleSelect options={[{text: "OPREM"}, {text: "SUNEM"}, {text: "MUNEM"}, {text: "CUKAM"}]}></CircleSelect>
+        <CircleSelect color={true} options={[{text: "OPREM", color: "red"}, {text: "SUNEM", color: "blue"}, {text: "MUNEM", color: "violet"}]}></CircleSelect>
 
       </div>
     </div>

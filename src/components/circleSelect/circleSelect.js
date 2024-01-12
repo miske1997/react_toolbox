@@ -14,10 +14,14 @@ function CircleSelect({placeholder = 'none', image = false, color = false, optio
             //element.style.display = element.style.display !== "" ? "" : "flex"   
         });
     }
-    function OptionClicked(optionText) {
+    function OptionClicked(optionData) {
         ToggleOpen()
         const selectText = document.querySelector('.circle-select-container>p')
-        selectText.innerHTML = optionText
+        const selectDiv = document.querySelector('.circle-select-container>div')
+        if(color)
+            selectDiv.style.backgroundColor = optionData.color
+        else
+            selectText.innerHTML = optionData.text
     }
     function SelectClicked(event){
         ToggleOpen()
@@ -29,22 +33,28 @@ function CircleSelect({placeholder = 'none', image = false, color = false, optio
         const left = 50 * Math.cos(DegreesToRads(index * increment))
         return { top: `${50 + top}%`, left: `${50 + left}%`}
     }
+    function GetOptionContentByType(optionData) {
+        if(color){
+            return (<div className='circle-color-option' style={{backgroundColor: optionData.color, }} ></div>)
+        }
+        else{
+            return (<p>{optionData.text}</p>)
+        }
+    }
     function PlaceOptions() {
         const increment = 360 / options.length
         return options.map((optionData, index) => {
             return (
-                <div onClick={(e) => {e.stopPropagation(); OptionClicked(optionData.text)}} style={CalcOptionPos(index, increment)}  className='circle-option-container'>
-
-                    (<p>{optionData.text}</p>)
-                    
+                <div onClick={(e) => {e.stopPropagation(); OptionClicked(optionData)}} style={CalcOptionPos(index, increment)}  className='circle-option-container'>
+                    {GetOptionContentByType(optionData)}
                 </div>
-            ) 
+            )
         });
     }
 
     return (
         <div onClick={SelectClicked} className='circle-select-container'>
-            <p>{placeholder}</p>
+            {GetOptionContentByType({color: placeholder})}
             {PlaceOptions()}
         </div>
      );
