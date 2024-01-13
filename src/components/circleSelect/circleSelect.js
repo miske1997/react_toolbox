@@ -3,9 +3,10 @@ import './circleSelect.css';
 
 
 function CircleSelect({placeholder = 'none', image = false, color = false, options = []}) {
+
     function ToggleOpen() {
         const select = document.querySelector('.circle-select-container')
-        select.style.width = select.style.width !== "" ? "" : `${select.clientWidth * 3.5}px`
+        select.style.minWidth = select.style.minWidth !== "" ? "" : `${select.clientWidth * 3.5}px`
         select.style.height = select.style.height !== "" ? "" : `${select.clientHeight * 3.5}px`
         //select.style.transform = select.style.transform !== "" ? "" : `rotate(360deg)`
 
@@ -18,14 +19,16 @@ function CircleSelect({placeholder = 'none', image = false, color = false, optio
         ToggleOpen()
         const selectText = document.querySelector('.circle-select-container>p')
         const selectDiv = document.querySelector('.circle-select-container>div')
+        const selectImg = document.querySelector('.circle-select-container>img')
         if(color)
             selectDiv.style.backgroundColor = optionData.color
+        else if(image)
+            selectImg.src = optionData.src
         else
             selectText.innerHTML = optionData.text
     }
     function SelectClicked(event){
         ToggleOpen()
-
     }
     const DegreesToRads = deg => (deg * Math.PI) / 180.0;
     function CalcOptionPos(index, increment){
@@ -36,6 +39,9 @@ function CircleSelect({placeholder = 'none', image = false, color = false, optio
     function GetOptionContentByType(optionData) {
         if(color){
             return (<div className='circle-color-option' style={{backgroundColor: optionData.color, }} ></div>)
+        }
+        else if(image){
+            return (<img src={optionData.src}/>)
         }
         else{
             return (<p>{optionData.text}</p>)
@@ -53,9 +59,12 @@ function CircleSelect({placeholder = 'none', image = false, color = false, optio
     }
 
     return (
-        <div onClick={SelectClicked} className='circle-select-container'>
-            {GetOptionContentByType({color: placeholder})}
-            {PlaceOptions()}
+        <div className='circle-select-main'>
+            <div onClick={SelectClicked} className='circle-select-container'>
+                {GetOptionContentByType({color: placeholder, src: ''})}
+                {PlaceOptions()}
+            </div>
+
         </div>
      );
 }
