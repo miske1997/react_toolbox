@@ -1,0 +1,50 @@
+import React, { Children, useEffect, useRef } from 'react';
+import './mouseHoverFolow.css';
+
+function MouseHoverComponent({children}) {
+    let hoverRef = useRef()
+    let mouseX, mouseY
+    let active = false
+    useEffect(() => {
+
+        if (children.length < 2)
+            return
+
+        hoverRef.current.style.display = 'none'
+        hoverRef.current.style.position = 'fixed'
+
+
+    },[])
+    function childEnter() {
+        active = true
+        hoverRef.current.style.display = ''
+        console.log("enter")
+    }
+    function childLeave() {
+        active = false
+        hoverRef.current.style.display = 'none'
+        console.log("leave")
+    }
+    function renderChildren(){
+        if (!children)
+            return
+        let childrenNew = [React.cloneElement(children[0], { onMouseEnter: childEnter, onMouseLeave: childLeave })]
+        childrenNew.push(React.cloneElement(children[1], { ref : hoverRef }))
+        return childrenNew
+    }
+    function mouseMoved(event){
+        if (!active)
+            return
+        
+        hoverRef.current.style.top = `${event.clientY}px`
+        hoverRef.current.style.left = `${event.clientX}px` 
+    }
+    return ( 
+    <div onMouseMove={mouseMoved} className='hover-container'>
+        {renderChildren()}
+    </div>
+    );
+}
+
+export default MouseHoverComponent;
+
