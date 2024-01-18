@@ -18,12 +18,10 @@ function MouseHoverComponent({children}) {
     function childEnter() {
         active = true
         hoverRef.current.style.display = ''
-        console.log("enter")
     }
     function childLeave() {
         active = false
         hoverRef.current.style.display = 'none'
-        console.log("leave")
     }
     function renderChildren(){
         if (!children)

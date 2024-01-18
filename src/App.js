@@ -1,6 +1,7 @@
 import './App.css';
 import CircleSelect from './components/circleSelect/circleSelect';
 import MouseHoverComponent from './components/mouseHoverFolow/mouseHoverFolow';
+import Card3D from './components/3dCard/3dCard';
 
 const data = [
   {
@@ -37,6 +38,9 @@ function App() {
         <div className='spacer'></div>
         <p>LOREM ipsu</p>
       </MouseHoverComponent>
+      <Card3D>
+        <img src='https://picsum.photos/id/1060/536/354?blur=2' ></img>
+      </Card3D>
     </div>
   );
 }

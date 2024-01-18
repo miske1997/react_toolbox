@@ -1,0 +1,21 @@
+.card3d{
+  transform-style: preserve-3d;
+  transform:perspective(50px);
+  margin: 0;
+  padding: 0;
+}
+
+.card3d::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    transform:translateZ(-30px) translateX(-1%) translateY(-1%);
+    width: 102%;
+    height: 102%;
+    background-color: black;
+}
+.card-container{
+    margin: 0;
+    padding: 0;
+}
