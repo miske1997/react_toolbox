@@ -1,9 +1,8 @@
-import React, { Children, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './mouseHoverFolow.css';
 
 function MouseHoverComponent({children}) {
     let hoverRef = useRef()
-    let mouseX, mouseY
     let active = false
     useEffect(() => {
 
@@ -11,7 +10,7 @@ function MouseHoverComponent({children}) {
             return
         hoverRef.current.style.display = 'none'
         hoverRef.current.style.position = 'fixed'
-    },[])
+    },[children.length])
     function childEnter() {
         active = true
         hoverRef.current.style.display = ''

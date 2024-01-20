@@ -1,11 +1,11 @@
 import React from 'react';
 
-function RotatingMenu({}) {
-    return ( 
+function RotatingMenuItem({}) {
+    return (
         <div>
             
         </div>
      );
 }
 
-export default RotatingMenu;
+export default RotatingMenuItem;
