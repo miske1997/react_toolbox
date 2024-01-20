@@ -1,0 +1,88 @@
+.item-card-container{
+    width: 200px;
+    height: 400px;
+    border-radius: 3em;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 2em;
+    background-color: #fff;
+}
+.card-nav{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-self: center;
+}
+.rating{
+    display: flex;
+    flex-direction: column;
+    height: 7em;
+    width: 5em;
+    background-color: orangered;
+    position: relative;
+    border-radius: 2em;
+}
+.rating>p{
+    margin: 0;
+    font-size: 50px;
+    position: relative;
+    left: 1.5rem;
+    font-weight: bold;
+}
+.rating>img{
+    position: absolute;
+    bottom: 0.2em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2em;
+    height: 2em;
+    background-color: blue;
+}
+.description{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+.description p{
+    margin: 0;
+    padding: 0;
+}
+.description>.dish-name{
+    font-size: 24px;
+}
+.description>.dish-sub{
+    font-size: 14px;
+    margin-bottom: 0.3rem;
+}
+.description>.dish-description{
+    font-size: 16px;
+}
+.like-dislike{
+    display: flex;
+    flex-direction: row;
+    
+    margin-top: 1em;
+    gap: 1em;
+}
+.like-dislike>.like{
+    border-radius: 0.7em;
+    padding: 0.2em 0.6em;
+    background-color: #eee;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.like-dislike>.like>img{
+    width: 1em;
+    height: 1em;
+    background-color: violet;
+    margin-right: 0.4em;    
+    margin-left: 0.2em;
+}
+.like-dislike>.like>p{
+    margin: 0;
+    font-size: 16px;
+}

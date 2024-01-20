@@ -9,11 +9,8 @@ function MouseHoverComponent({children}) {
 
         if (children.length < 2)
             return
-
         hoverRef.current.style.display = 'none'
         hoverRef.current.style.position = 'fixed'
-
-
     },[])
     function childEnter() {
         active = true

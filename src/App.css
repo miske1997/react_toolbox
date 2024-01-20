@@ -1,10 +1,12 @@
 .App {
-  margin: 10em;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
+  width: 100vw;
+  height: 100vh;
+  background-color: #CFCFCF;
 }
 
 .App-logo {
