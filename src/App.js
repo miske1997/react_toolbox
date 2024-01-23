@@ -3,6 +3,8 @@ import CircleSelect from './components/circleSelect/circleSelect';
 import MouseHoverComponent from './components/mouseHoverFolow/mouseHoverFolow';
 import Card3D from './components/3dCard/3dCard';
 import ItemCard from './components/ItemCard/ItemCard';
+import RotatingMenu from './components/RotatingMenu/RotatingMenu';
+import { useEffect } from 'react';
 
 const data = [
   {
@@ -27,10 +29,12 @@ const data = [
   },
 ]
 
+
 function App() {
   return (
     <div className="App">
-      <ItemCard></ItemCard>
+      <RotatingMenu itemsData={data}></RotatingMenu>
+      {/* <ItemCard></ItemCard> */}
       {/* <div className='spacer'></div>
       <div className='con'>
         <CircleSelect image={true} color={false} options={data}></CircleSelect>

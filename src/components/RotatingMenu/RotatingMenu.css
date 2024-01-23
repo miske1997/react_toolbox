@@ -1,0 +1,11 @@
+.rotating-menu-ring{
+    background-image: radial-gradient(transparent,  transparent 50%, blue 55%, blue);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    position: relative;
+    transition: transform 1s;
+}
