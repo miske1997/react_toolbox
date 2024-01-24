@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './RotatingMenu.css'
 import RotatingMenuItem from '../RotatingMenuItem/RotatingMenuItem'
+import { func } from 'prop-types';
 
 
 
@@ -21,17 +22,24 @@ function RotatingMenu({itemsData = []}) {
 
     useEffect(() => {
         window.addEventListener("keydown", KeyDown)
+
+        return () => {
+            window.removeEventListener("keydown", KeyDown)
+        }
     }, [])
 
     useEffect(() => {
         menuRef.current.style.transform = `rotateZ(${angle}deg)`
     })
-
+    function IsItemActive(index){
+        // -90         3       0 === 
+        return (((angle / 90) % 4) === index || (4 + (angle / 90) % 4) === index) && (Math.floor(angle / 360) === Math.floor(index / 4) || Math.floor((angle % (90 * itemsData.length)) / 360) === (Math.floor((index - itemsData.length) / 4) ))
+    }
     function DrawItems(){
-        console.log('Draw', angle);
+        console.log('Draw', angle, Math.floor(angle / 360));
         itemsList = itemsData.map((data, index) => {
             return (
-                <RotatingMenuItem rotation={-angle} active={(((angle / -90) + 1) % 4) === index} src={data.src} pos={index}></RotatingMenuItem>
+                <RotatingMenuItem rotation={-angle} active={IsItemActive(index)} src={data.src} pos={index}></RotatingMenuItem>
             )
         })
 

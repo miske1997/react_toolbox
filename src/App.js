@@ -27,6 +27,16 @@ const data = [
     color: "black",
     src: "https://picsum.photos/id/1060/536/354?blur=2"
   },
+  {
+    text: "LOREM",
+    color: "red",
+    src: "https://picsum.photos/536/354"
+  },
+  {
+    text: "LOREM",
+    color: "red",
+    src: "https://picsum.photos/id/870/536/354?grayscale&blur=2"
+  },
 ]
 
 
