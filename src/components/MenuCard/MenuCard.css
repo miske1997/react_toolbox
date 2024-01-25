@@ -1,0 +1,17 @@
+.menu-card{
+    max-width: 23%;
+    height: 7em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.2em;
+    z-index: 5;
+}
+
+.menu-card img{
+
+}
+
+.menu-card p{
+    margin: 0;
+}

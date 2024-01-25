@@ -1,0 +1,54 @@
+.menu-items{
+    width: 50vw;
+    height: 120px;
+    padding: 1em;
+    border: blue solid 1px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.menu-item-list-con{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.menu-item-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3%;
+    position: relative;
+    left: -50%;
+    transition: left 1s ease;
+}
+.item-indicator{
+    transition: left 1s ease;
+    width: 23%;
+    height: 100%;
+    background-color: white;
+    border-radius: 0.8em;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    top: 0;
+}
+.left-arrow{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #33b19cb4;
+    height: 100%;
+    width: 1em;
+    z-index: 10;
+}
+.right-arrow{
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #33b19cb4;
+    height: 100%;
+    width: 1em;
+    z-index: 10;
+}
