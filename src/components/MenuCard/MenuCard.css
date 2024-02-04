@@ -1,6 +1,6 @@
 .menu-card{
-    max-width: 23%;
-    height: 7em;
+    min-width: 20cqi;
+    height: 100cqb;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,7 +9,8 @@
 }
 
 .menu-card img{
-
+    margin: 0 2em;
+    height: 9cqb;
 }
 
 .menu-card p{

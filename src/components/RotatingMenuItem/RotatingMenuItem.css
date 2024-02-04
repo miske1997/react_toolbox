@@ -3,15 +3,26 @@
     position: absolute;
     width: 40%;
     height: 40%;
-    overflow: hidden;
     opacity: 0;
     transition: transform 1s, scale 0.2s;
     transform-origin: 50% 50%;
 }
 .rotating-menu-item img{
     border-radius: 50%;
-    aspect-ratio: 1 / 1;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+    max-width: 20cqi;
+    height: 20cqi;
+    object-fit: cover;
+}
+.rotating-menu-item div{
+    max-width: 0;
+    overflow: hidden;
+    transition: max-width 1s;
+    transition-delay: 450ms;
+    position: absolute;
+    left: 80%;
+    top: 4%;
+    font-size: 5rem;
+}
+.rotating-menu-item p{
+    
 }

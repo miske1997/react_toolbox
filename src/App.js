@@ -4,7 +4,7 @@ import MouseHoverComponent from './components/mouseHoverFolow/mouseHoverFolow';
 import Card3D from './components/3dCard/3dCard';
 import ItemCard from './components/ItemCard/ItemCard';
 import RotatingMenu from './components/RotatingMenu/RotatingMenu';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import ItemList from './components/ItemList/ItemList';
 
 const data = [
@@ -42,11 +42,17 @@ const data = [
 
 
 function App() {
+
+  const [rotatingPos, setRotatingPos] = useState(0)
+  function ItemSelected(index) {
+    setRotatingPos(index)
+  }
   return (
     <div className="App">
-      
-      <ItemList menuItemsData={data}></ItemList>
-      {/* <ItemCard></ItemCard> */}
+      <RotatingMenu itemsData={data} position={rotatingPos}></RotatingMenu>
+      <ItemList onItemSelect={ItemSelected} menuItemsData={data}></ItemList>
+
+      <ItemCard></ItemCard>
       {/* <div className='spacer'></div>
       <div className='con'>
       <CircleSelect image={true} color={false} options={data}></CircleSelect>
@@ -56,9 +62,11 @@ function App() {
       <div className='spacer'></div>
       <p>LOREM ipsu</p>
       </MouseHoverComponent>
-      <Card3D>
-      <img src='https://picsum.photos/id/1060/536/354?blur=2' ></img>
-    </Card3D> */}
+
+            <Card3D>
+        <img src='https://picsum.photos/id/1060/536/354?blur=2' ></img>
+    </Card3D>
+       */}
     </div>
   );
 }

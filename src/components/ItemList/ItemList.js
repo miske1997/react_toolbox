@@ -18,7 +18,7 @@ function ItemList({menuItemsData = [], onItemSelect = () => {}}) {
     }
     function ItemSelected(index){
         onItemSelect(index)
-        indicatorRef.current.style.left = `${index * 26}%`
+        indicatorRef.current.style.left = `${index * 27}%`
     }
     function RenderItems(){
         return menuItemsData.map((data, index) => {
@@ -29,10 +29,10 @@ function ItemList({menuItemsData = [], onItemSelect = () => {}}) {
     }
     return ( 
         <div className='menu-items'>
-            <div className='left-arrow' onClick={LeftArrow}></div>
-            <div className='right-arrow' onClick={RightArrow}></div>
+            <div className='left-arrow arrow' onClick={LeftArrow}></div>
+            <div className='right-arrow arrow' onClick={RightArrow}></div>
             <div className='menu-item-list-con'>
-                <div className='menu-item-list' style={{left: `${-listPos * 25}%`}}>
+                <div className='menu-item-list' style={{left: `${-listPos * 27}%`}}>
                     <div className='item-indicator' ref={indicatorRef}></div>
                     {RenderItems()}
                 </div>

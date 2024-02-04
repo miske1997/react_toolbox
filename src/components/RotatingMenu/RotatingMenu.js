@@ -1,15 +1,15 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './RotatingMenu.css'
 import RotatingMenuItem from '../RotatingMenuItem/RotatingMenuItem'
-import { func } from 'prop-types';
 
 
 
-function RotatingMenu({itemsData = []}) {
-    let [angle, setAngle] = useState(0)
+function RotatingMenu({itemsData = [], position = 0}) {
+    //let [angle, setAngle] = useState(0)
+    const angle = position * 90
     let menuRef = useRef()
     let itemsList = []
-    function KeyDown(event){
+    /* function KeyDown(event){
         // console.log("munem");
         if (event.key == 'ArrowLeft'){
             setAngle(curangle => curangle + 90)
@@ -27,7 +27,7 @@ function RotatingMenu({itemsData = []}) {
             window.removeEventListener("keydown", KeyDown)
         }
     }, [])
-
+ */
     useEffect(() => {
         menuRef.current.style.transform = `rotateZ(${angle}deg)`
     })
@@ -39,7 +39,7 @@ function RotatingMenu({itemsData = []}) {
         console.log('Draw', angle, Math.floor(angle / 360));
         itemsList = itemsData.map((data, index) => {
             return (
-                <RotatingMenuItem rotation={-angle} active={IsItemActive(index)} src={data.src} pos={index}></RotatingMenuItem>
+                <RotatingMenuItem name={data.text} rotation={-angle} offset={-20} active={IsItemActive(index)} src={data.src} pos={index}></RotatingMenuItem>
             )
         })
 

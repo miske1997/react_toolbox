@@ -1,31 +1,37 @@
 .item-card-container{
-    width: 200px;
-    height: 400px;
+    width: 20cqi;
+    height: 30cqi;
+
     border-radius: 3em;
     padding-top: 20px;
     display: flex;
     flex-direction: column;
     padding: 0 2em;
+    position: fixed;
+    right: 5vw;
+    top: 70vh;
+    translate: 0 -100%;
     background-color: #fff;
 }
 .card-nav{
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 1.5cqi;
+    font-size: 1.3cqi;
     align-self: center;
 }
 .rating{
     display: flex;
     flex-direction: column;
-    height: 7em;
-    width: 5em;
+    height: 7cqi;
+    width: 5cqi;
     background-color: orangered;
     position: relative;
     border-radius: 2em;
 }
 .rating>p{
     margin: 0;
-    font-size: 50px;
+    font-size: 3.5cqi;
     position: relative;
     left: 1.5rem;
     font-weight: bold;
@@ -35,8 +41,8 @@
     bottom: 0.2em;
     left: 50%;
     transform: translateX(-50%);
-    width: 2em;
-    height: 2em;
+    width: 2cqi;
+    height: 2cqi;
     background-color: blue;
 }
 .description{
@@ -50,25 +56,25 @@
     padding: 0;
 }
 .description>.dish-name{
-    font-size: 24px;
+    font-size: 1.6cqi;
 }
 .description>.dish-sub{
-    font-size: 14px;
-    margin-bottom: 0.3rem;
+    font-size: 1cqi;
+    margin-bottom: 0.3cqi;
 }
 .description>.dish-description{
-    font-size: 16px;
+    font-size: 1cqi;
 }
 .like-dislike{
     display: flex;
     flex-direction: row;
     
-    margin-top: 1em;
-    gap: 1em;
+    margin-top: 1cqi;
+    gap: 1cqi;
 }
 .like-dislike>.like{
-    border-radius: 0.7em;
-    padding: 0.2em 0.6em;
+    border-radius: 0.7cqi;
+    padding: 0.2cqi 0.6cqi;
     background-color: #eee;
     display: flex;
     flex-direction: row;
@@ -76,13 +82,13 @@
     justify-content: center;
 }
 .like-dislike>.like>img{
-    width: 1em;
-    height: 1em;
+    width: 1cqi;
+    height: 1cqi;
     background-color: violet;
-    margin-right: 0.4em;    
-    margin-left: 0.2em;
+    margin-right: 0.4cqi;    
+    margin-left: 0.2cqi;
 }
 .like-dislike>.like>p{
     margin: 0;
-    font-size: 16px;
+    font-size: 1cqi;
 }
