@@ -16,14 +16,14 @@ function ItemList({menuItemsData = [], onItemSelect = () => {}}) {
             return
         setListPos(listPos + 1)
     }
-    function ItemSelected(index){
-        onItemSelect(index)
+    function ItemSelected(index, imageSrc){
+        onItemSelect(index, imageSrc)
         indicatorRef.current.style.left = `${index * 27}%`
     }
     function RenderItems(){
         return menuItemsData.map((data, index) => {
             return (
-                <MenuCard onSelect={() => ItemSelected(index)} image={data.src} name={data.text}></MenuCard>
+                <MenuCard onSelect={() => ItemSelected(index, data.src)} image={data.src} name={data.text}></MenuCard>
             )
         })
     }

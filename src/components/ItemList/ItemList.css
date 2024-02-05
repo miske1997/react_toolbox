@@ -4,7 +4,7 @@
     padding: 1em;
     display: flex;
     justify-content: center;
-    position: absolute;
+    /* position: absolute; */
     container-type: inline-size;
     bottom: 5rem;
     left: 5rem;
@@ -63,10 +63,8 @@
     .menu-items{
         flex-direction: column;
         left: 50%;
-        translate: -50% 0;
-        height: 60vh;
         width: 80vw;
-        bottom: 0vh;
+
     }
     .menu-item-list{
         flex-direction: column;

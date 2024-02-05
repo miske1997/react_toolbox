@@ -6,6 +6,8 @@ import ItemCard from './components/ItemCard/ItemCard';
 import RotatingMenu from './components/RotatingMenu/RotatingMenu';
 import { useEffect, useState } from 'react';
 import ItemList from './components/ItemList/ItemList';
+import Menu from './components/Menu/Menu';
+import RotatingMenuAlt from './components/RotatingMenuAlt/RotatingMenuAlt';
 
 const data = [
   {
@@ -42,17 +44,23 @@ const data = [
 
 
 function App() {
-
-  const [rotatingPos, setRotatingPos] = useState(0)
-  function ItemSelected(index) {
-    setRotatingPos(index)
+  const [rotatingMenuData, setRotatingMenuData] = useState({position: 0, activeImg: '', prevImgSrc: ''})
+  function ItemSelected(index, imageSrc) {
+    let nextRotPos = rotatingMenuData.position
+    if (rotatingMenuData.position !== index){
+      nextRotPos += rotatingMenuData.position > index ? -1 : 1
+    }
+    setRotatingMenuData({position: nextRotPos, activeImg: imageSrc, prevImgSrc: rotatingMenuData.activeImg})
   }
   return (
     <div className="App">
-      <RotatingMenu itemsData={data} position={rotatingPos}></RotatingMenu>
-      <ItemList onItemSelect={ItemSelected} menuItemsData={data}></ItemList>
+      <RotatingMenuAlt menuData={rotatingMenuData}></RotatingMenuAlt>
+      {/* <ItemList onItemSelect={ItemSelected} menuItemsData={data}></ItemList> */}
+      <Menu onItemSelect={ItemSelected} menus={[{src: '', data: data}, {src: '', data: []}, {src: '', data: []}]}>
+        
+      </Menu>
+      {/* <ItemCard></ItemCard> */}
 
-      <ItemCard></ItemCard>
       {/* <div className='spacer'></div>
       <div className='con'>
       <CircleSelect image={true} color={false} options={data}></CircleSelect>
