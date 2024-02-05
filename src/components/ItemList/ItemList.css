@@ -57,3 +57,25 @@
 .right-arrow{
     right: -6%;
 }
+
+
+@media screen and (max-width: 600px) {
+    .menu-items{
+        flex-direction: column;
+        left: 50%;
+        translate: -50% 0;
+        height: 60vh;
+        width: 80vw;
+        bottom: 0vh;
+    }
+    .menu-item-list{
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+    .arrow{
+        display: none;
+    }
+    .item-indicator{
+        display: none;
+    }
+}

@@ -37,9 +37,10 @@ function RotatingMenu({itemsData = [], position = 0}) {
     }
     function DrawItems(){
         console.log('Draw', angle, Math.floor(angle / 360));
+        const offset = window.screen.width > 600 ? -20 : 0
         itemsList = itemsData.map((data, index) => {
             return (
-                <RotatingMenuItem name={data.text} rotation={-angle} offset={-20} active={IsItemActive(index)} src={data.src} pos={index}></RotatingMenuItem>
+                <RotatingMenuItem name={data.text} rotation={-angle} offset={offset} active={IsItemActive(index)} src={data.src} pos={index}></RotatingMenuItem>
             )
         })
 
