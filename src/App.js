@@ -44,19 +44,19 @@ const data = [
 
 
 function App() {
-  const [rotatingMenuData, setRotatingMenuData] = useState({position: 0, activeImg: '', prevImgSrc: ''})
+  const [rotatingMenuData, setRotatingMenuData] = useState({position: 0, activeImg: '', prevImgSrc: '', curIndex: 0})
   function ItemSelected(index, imageSrc) {
     let nextRotPos = rotatingMenuData.position
-    if (rotatingMenuData.position !== index){
-      nextRotPos += rotatingMenuData.position > index ? -1 : 1
+    if (rotatingMenuData.curIndex !== index){
+      nextRotPos += rotatingMenuData.curIndex > index ? -1 : 1
     }
-    setRotatingMenuData({position: nextRotPos, activeImg: imageSrc, prevImgSrc: rotatingMenuData.activeImg})
+    setRotatingMenuData({position: nextRotPos, activeImg: imageSrc, prevImgSrc: rotatingMenuData.activeImg, curIndex: index})
   }
   return (
     <div className="App">
       <RotatingMenuAlt menuData={rotatingMenuData}></RotatingMenuAlt>
       {/* <ItemList onItemSelect={ItemSelected} menuItemsData={data}></ItemList> */}
-      <Menu onItemSelect={ItemSelected} menus={[{src: '', data: data}, {src: '', data: []}, {src: '', data: []}]}>
+      <Menu onItemSelect={ItemSelected} menus={[{src: '', data: data}, {src: '', data: data}, {src: '', data: []}]}>
         
       </Menu>
       {/* <ItemCard></ItemCard> */}

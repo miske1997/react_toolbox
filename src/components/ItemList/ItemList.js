@@ -18,7 +18,12 @@ function ItemList({menuItemsData = [], onItemSelect = () => {}}) {
     }
     function ItemSelected(index, imageSrc){
         onItemSelect(index, imageSrc)
-        indicatorRef.current.style.left = `${index * 27}%`
+        if (window.screen.width > 600){
+            indicatorRef.current.style.left = `${index * 27}%`
+        }
+        else{
+            indicatorRef.current.style.top = `${index * 2.2 - 0.1}rem`
+        }
     }
     function RenderItems(){
         return menuItemsData.map((data, index) => {

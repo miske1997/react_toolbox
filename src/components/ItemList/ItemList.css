@@ -66,6 +66,9 @@
         width: 80vw;
 
     }
+    .menu-item-list-con{
+        overflow: visible;
+    }
     .menu-item-list{
         flex-direction: column;
         gap: 0.2rem;
@@ -74,6 +77,12 @@
         display: none;
     }
     .item-indicator{
-        display: none;
+        transition: top 1s ease;
+        background-color: #cfcfcf;
+        height: 2rem;
+        width: 103%;
+        left: 50%;
+        translate: -50% 0;
+        border-radius: 10px;
     }
 }
